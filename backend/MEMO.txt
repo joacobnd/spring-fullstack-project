@@ -1,0 +1,17 @@
+conectarse a la db desde terminal:
+    docker exec -it postgres bash
+    psql -U joaco
+
+
+COMO RESETEAR EL VALOR DE ID SEQUENCE
+    select setval('customer_id_seq', 1, false);
+
+jdbc:postgresql://localhost:5332/customer
+
+
+docker compose up -d
+docker compose stop
+docker compose down
+
+
+docker run --name fullstack-project --rm -p 8080:8080 --network full-stack-project_postgres joacobnd/fullstack-project --spring.datasource.url=jdbc:postgresql://postgres:5432/customer
