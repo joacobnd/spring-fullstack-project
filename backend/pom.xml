@@ -19,7 +19,8 @@
     <properties>
         <java.version>17</java.version>
         <docker.username>joacobnd</docker.username>
-        <docker.projectname>fullstack-project</docker.projectname>
+        <docker.image.name>fullstack-project</docker.image.name>
+        <docker.image.tag/>
     </properties>
 
     <dependencies>
@@ -186,7 +187,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/joacobnd/${docker.projectname}:${project.version}</image>
+                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>
