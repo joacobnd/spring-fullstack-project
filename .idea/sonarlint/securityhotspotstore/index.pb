@@ -20,5 +20,3 @@ Nbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerRepository.java
 Ybackend/src/main/java/com/joaquingrandiccelli/customer/CustomerJDBCDataAccessService.java,f\4\f4c6c2c249628e198cab4d610423c3e0ad5ab3dd
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-u
-Ebackend/src/main/java/com/joaquingrandiccelli/PingPongController.java,7\4\745e47ac21e8c911e035e5a21194f190ec1d3f51
