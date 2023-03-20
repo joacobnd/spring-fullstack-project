@@ -74,6 +74,7 @@ jobs:
         run: |
           git config user.name joacobnd
           git config user.email joacomda@gmail.com
+          git remote set-url origin https://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@github.com/joacobnd/spring-fullstack-project.git
           git add .
           git commit -m "Update Dockerrun.aws.json docker image with new tag ${{ steps.build-number.outputs.BUILD_NUMBER }}"
-          git push https://joacobnd:Asdasdasd123.-@github.com/joacobnd/spring-fullstack-project.git --all
+          git push 
