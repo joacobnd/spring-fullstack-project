@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "fullstack-project",
-      "image": "joacobnd/fullstack-project:23.03.2023.10.04.30",
+      "image": "joacobnd/fullstack-project:23.03.2023.14.45.14",
       "essential": true,
       "memory": 512,
       "portMappings": [
