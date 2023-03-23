@@ -3,8 +3,6 @@ package com.joaquingrandiccelli.customer;
 import com.joaquingrandiccelli.exception.DuplicateResourceException;
 import com.joaquingrandiccelli.exception.RequestValidationException;
 import com.joaquingrandiccelli.exception.ResourceNotFoundException;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +15,6 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -49,8 +46,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         Mockito.when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         // When
@@ -80,7 +77,7 @@ class CustomerServiceTest {
         when(customerDao.existPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "alex", email, 19
+                "alex", email, 19, Gender.MALE
         );
 
         // When
@@ -108,7 +105,7 @@ class CustomerServiceTest {
         when(customerDao.existPersonWithEmail(email)).thenReturn(true);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "alex", email, 19
+                "alex", email, 19, Gender.MALE
         );
 
         // When
@@ -155,8 +152,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         String email = "joaco__@gmail.com";
@@ -194,8 +191,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         CustomerUpdateRequest updateRequest = new CustomerUpdateRequest(
@@ -226,8 +223,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         String newEmail = "alex@gmail.com";
@@ -260,8 +257,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         CustomerUpdateRequest updateRequest = new CustomerUpdateRequest(
@@ -292,8 +289,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         CustomerUpdateRequest updateRequest = new CustomerUpdateRequest(
@@ -321,8 +318,8 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
         String newEmail = "alex@gmail.com";

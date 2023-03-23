@@ -1,17 +1,11 @@
 package com.joaquingrandiccelli.customer;
 
-import com.github.javafaker.Faker;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 
 class CustomerJPADataAccessServiceTest {
@@ -60,8 +54,8 @@ class CustomerJPADataAccessServiceTest {
                 1,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
 
         // When
         underTest.insertCustomer(customer);
@@ -114,8 +108,8 @@ class CustomerJPADataAccessServiceTest {
                 1,
                 "Joaquin",
                 "joaco@gmail.com",
-                31
-        );
+                31,
+                Gender.MALE);
 
         // When
         underTest.updateCustomer(customer);

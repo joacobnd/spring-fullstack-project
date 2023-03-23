@@ -6,10 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,8 +36,8 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 FAKER.name().fullName(),
                 email,
-                FAKER.number().numberBetween(10, 90)
-        );
+                FAKER.number().numberBetween(10, 90),
+                Gender.MALE);
         underTest.save(customer);
 
         //When
@@ -66,8 +64,8 @@ class CustomerRepositoryTest extends AbstractTestContainers {
         Customer customer = new Customer(
                 FAKER.name().fullName(),
                 email,
-                FAKER.number().numberBetween(10, 90)
-        );
+                FAKER.number().numberBetween(10, 90),
+                Gender.MALE);
         underTest.save(customer);
 
         Integer id = underTest.findAll()
