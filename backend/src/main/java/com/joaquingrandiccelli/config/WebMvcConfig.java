@@ -20,7 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        CorsRegistration corsRegistration = registry.addMapping("/api/**");
+        CorsRegistration corsRegistration = registry.addMapping("/api/**").allowedMethods("*").allowedMethods("*");
         allowOrigins.forEach(corsRegistration::allowedOrigins);
         allowMethods.forEach(corsRegistration::allowedMethods);
     }
