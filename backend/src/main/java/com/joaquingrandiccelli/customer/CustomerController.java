@@ -6,6 +6,7 @@ import java.util.List;
 
 //API Layer - Controller
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("api/v1/customers")
 public class CustomerController {
 
