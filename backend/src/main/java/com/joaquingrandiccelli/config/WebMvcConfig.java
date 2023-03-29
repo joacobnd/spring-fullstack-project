@@ -38,5 +38,4 @@ public class WebMvcConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
-
 }
