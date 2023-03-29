@@ -11,8 +11,6 @@ P
  .github/workflows/backend-ci.yml,4\a\4a71d8f4c9eca6b1270bc119e4822517451b02f9
 8
 MEMO.txt,9\8\98448f4ef9037a43a80bd0901205e4eb1ff9eb24
-?
-backend/pom.xml,f\9\f9590cd73598b6f2427c8b1327d922c50d1dc504
 u
 Ebackend/src/main/java/com/joaquingrandiccelli/PingPongController.java,7\4\745e47ac21e8c911e035e5a21194f190ec1d3f51
 :

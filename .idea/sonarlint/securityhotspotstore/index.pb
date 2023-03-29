@@ -13,8 +13,6 @@ P
  .github/workflows/backend-ci.yml,4\a\4a71d8f4c9eca6b1270bc119e4822517451b02f9
 8
 MEMO.txt,9\8\98448f4ef9037a43a80bd0901205e4eb1ff9eb24
-?
-backend/pom.xml,f\9\f9590cd73598b6f2427c8b1327d922c50d1dc504
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

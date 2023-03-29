@@ -1,4 +1,4 @@
-package com.joaquingrandiccelli.config;
+package com.joaquingrandiccelli.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -6,14 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
 @Configuration
-@EnableWebMvc
-public class WebMvcConfig implements WebMvcConfigurer {
+public abstract class CorsConfig {
 
     @Value("#{'${cors.allowed-origins}'.split(',')}")
     private List<String> allowedOrigins;
@@ -27,6 +24,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Value("#{'${cors.exposed-headers}'.split(',')}")
     private List<String> expectedHeaders;
 
+
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -38,4 +37,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+
 }
