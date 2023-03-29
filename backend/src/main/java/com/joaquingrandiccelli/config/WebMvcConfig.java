@@ -14,19 +14,15 @@ import java.util.List;
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Value("#{'${cors.allowed-origins}'.split(',')}")
-    private List<String> allowOrigins;
+    private List<String> allowedOrigins;
+
     @Value("#{'${cors.allowed-methods}'.split(',')}")
-    private List<String> allowMethods;
+    private List<String> allowedMethods;
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowedHeaders("*")
-                .allowCredentials(false);
-//        CorsRegistration corsRegistration = registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
-//        allowOrigins.forEach(corsRegistration::allowedOrigins);
-//        allowMethods.forEach(corsRegistration::allowedMethods);
+        CorsRegistration corsRegistration = registry.addMapping("/api/**");
+        allowedOrigins.forEach(corsRegistration::allowedOrigins);
+        allowedMethods.forEach(corsRegistration::allowedMethods);
     }
 }
