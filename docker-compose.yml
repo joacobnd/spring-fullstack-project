@@ -27,6 +27,17 @@ services:
       - db
     restart: unless-stopped
 
+  joaco-react:
+    container_name: joaco-react
+    image: joacobnd/joaco-react
+    build:
+      context: frontend/react
+    ports:
+      - "3000:5173"
+    depends_on:
+      - joaco-api
+    restart: unless-stopped
+
 networks:
   postgres:
     driver: bridge
