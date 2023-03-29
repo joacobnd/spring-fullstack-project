@@ -9,8 +9,6 @@ Nbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerRepository.java
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 P
  .github/workflows/backend-ci.yml,4\a\4a71d8f4c9eca6b1270bc119e4822517451b02f9
-J
-backend/Dockerrun.aws.json,5\9\59f499d102772ea93826f91977a004bab07b043d
 8
 MEMO.txt,9\8\98448f4ef9037a43a80bd0901205e4eb1ff9eb24
 ?
