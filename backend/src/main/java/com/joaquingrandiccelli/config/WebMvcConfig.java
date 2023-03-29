@@ -14,6 +14,7 @@ import java.util.List;
 @EnableWebMvc
 public class WebMvcConfig {
 
+
     @Value("#{'${cors.allowed-origins}'.split(',')}")
     private List<String> allowedOrigins;
 
