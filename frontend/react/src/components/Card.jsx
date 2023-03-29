@@ -20,8 +20,10 @@ import {
 import {useRef} from "react";
 import {deleteCustomer} from "../services/client.jsx";
 import {errorNotification, successNotification} from "../services/notifications.jsx";
+import CreateCustomerForm from "./CreateCustomerForm.jsx";
+import UpdateCustomerDrawer from "./UpdateCustomerDrawer.jsx";
 
-export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers }) {
+export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers}) {
 
     const randomUserGender = gender === "MALE" ? "men" : "women";
 
@@ -32,7 +34,9 @@ export default function CardWithImage({id, name, email, age, gender, imageNumber
         <Center py={6}>
             <Box
                 maxW={'300px'}
+                minW={"250px"}
                 w={'full'}
+                m={2}
                 bg={useColorModeValue('white', 'gray.800')}
                 boxShadow={'lg'}
                 rounded={'md'}
@@ -70,70 +74,83 @@ export default function CardWithImage({id, name, email, age, gender, imageNumber
                     </Stack>
                 </Box>
 
-                <Stack m={2}>
-                    <Button
-                        mt={5}
-                        bg={"red.400"}
-                        rounded={"full"}
-                        _hover={{
-                            transform: 'translateY(-2px)',
-                            boxShadow: 'lg'
-                        }}
-                        _focus={{
-                            bg: 'green.500'
-                        }}
-                        onClick={onOpen}
-                    >
-                        Delete
-                    </Button>
 
-                    <AlertDialog
-                        leastDestructiveRef={cancelRef}
-                        isOpen={isOpen}
-                        onClose={onClose}
-                    >
-                        <AlertDialogOverlay>
-                            <AlertDialogContent>
-                                <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-                                    Delete Customer
-                                </AlertDialogHeader>
+                <Stack>
 
-                                <AlertDialogBody>
-                                    Are you sure to delete {name}? You can't undo this action afterwards.
-                                </AlertDialogBody>
+                    <Stack mt={-5} mb={-6} justify={'center'} p={4}>
+                        <UpdateCustomerDrawer
+                            initialValues={{ name, email, age }}
+                            customerId={id}
+                            fetchCustomers={fetchCustomers}
+                        />
+                    </Stack>
 
-                                <AlertDialogFooter>
-                                    <Button ref={cancelRef} onClick={onClose}>
-                                        Cancel
-                                    </Button>
-                                    <Button
-                                        colorScheme='red'
-                                        onClick={() => {
-                                            deleteCustomer(id).then(res => {
-                                                console.log(res);
-                                                successNotification(
-                                                    "Customer deleted",
-                                                    `${name} was successfully deleted`
-                                                );
-                                                fetchCustomers();
-                                            }).catch(err => {
-                                                console.log(err);
-                                                errorNotification(
-                                                    err.code,
-                                                    err.response.data.message
-                                                );
-                                            }).finally(() => {
-                                                onClose();
-                                            });
-                                        }}
-                                        ml={3}
-                                    >
-                                        Delete
-                                    </Button>
-                                </AlertDialogFooter>
-                            </AlertDialogContent>
-                        </AlertDialogOverlay>
-                    </AlertDialog>
+                    <Stack m={2} justify={'center'} p={2} >
+                        <Button
+                            mb={5}
+                            bg={"red.400"}
+                            rounded={"full"}
+                            _hover={{
+                                transform: 'translateY(-2px)',
+                                boxShadow: 'lg'
+                            }}
+                            _focus={{
+                                bg: 'green.500'
+                            }}
+                            onClick={onOpen}
+                        >
+                            Delete
+                        </Button>
+
+                        <AlertDialog
+                            leastDestructiveRef={cancelRef}
+                            isOpen={isOpen}
+                            onClose={onClose}
+                        >
+                            <AlertDialogOverlay>
+                                <AlertDialogContent>
+                                    <AlertDialogHeader fontSize='lg' fontWeight='bold'>
+                                        Delete Customer
+                                    </AlertDialogHeader>
+
+                                    <AlertDialogBody>
+                                        Are you sure to delete {name}? You can't undo this action afterwards.
+                                    </AlertDialogBody>
+
+                                    <AlertDialogFooter>
+                                        <Button ref={cancelRef} onClick={onClose}>
+                                            Cancel
+                                        </Button>
+                                        <Button
+                                            colorScheme='red'
+                                            onClick={() => {
+                                                deleteCustomer(id).then(res => {
+                                                    console.log(res);
+                                                    successNotification(
+                                                        "Customer deleted",
+                                                        `${name} was successfully deleted`
+                                                    );
+                                                    fetchCustomers();
+                                                }).catch(err => {
+                                                    console.log(err);
+                                                    errorNotification(
+                                                        err.code,
+                                                        err.response.data.message
+                                                    );
+                                                }).finally(() => {
+                                                    onClose();
+                                                });
+                                            }}
+                                            ml={3}
+                                        >
+                                            Delete
+                                        </Button>
+                                    </AlertDialogFooter>
+                                </AlertDialogContent>
+                            </AlertDialogOverlay>
+                        </AlertDialog>
+
+                    </Stack>
 
                 </Stack>
 
