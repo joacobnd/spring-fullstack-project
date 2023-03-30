@@ -26,11 +26,12 @@ public class Main {
 
     }
 
+
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(Arrays.asList("http://joacoapi-env.eba-pjifwcsb.eu-west-3.elasticbeanstalk.com:8080"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList("http://joacoapi-env.eba-pjifwcsb.eu-west-3.elasticbeanstalk.com"));
         corsConfiguration.setAllowedHeaders(Arrays.asList("Origin", "Access-Control-Allow-Origin", "Content-Type",
                 "Accept", "Authorization", "Origin, Accept", "X-Requested-With",
                 "Access-Control-Request-Method", "Access-Control-Request-Headers"));
@@ -41,6 +42,8 @@ public class Main {
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
+
+
 
     @Bean
     CommandLineRunner runner(CustomerRepository customerRepository) {

@@ -6,11 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
+import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-public abstract class CorsConfig {
+public class CorsConfig {
 
     @Value("#{'${cors.allowed-origins}'.split(',')}")
     private List<String> allowedOrigins;
@@ -26,17 +27,19 @@ public abstract class CorsConfig {
 
 
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(allowedOrigins);
-        configuration.setAllowedMethods(allowedMethods);
-        configuration.setAllowedHeaders(allowedHeaders);
-        configuration.setExposedHeaders(expectedHeaders);
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration cc = new CorsConfiguration();
+//        cc.setAllowedHeaders(allowedHeaders);
+//        cc.setExposedHeaders(expectedHeaders);
+//        cc.setAllowedOrigins(allowedOrigins);
+//        cc.setAllowedMethods(allowedMethods);
+//        cc.setAllowCredentials(Boolean.TRUE);
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", cc);
+//        return source;
+//    }
+
 
 
 }

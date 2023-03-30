@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 --platform=linux/amd64 node:19-alpine
+FROM --platform=linux/arm64 node:19-alpine
 ARG api_base_url
 WORKDIR /app
 COPY package*.json .

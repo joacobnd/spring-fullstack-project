@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //API Layer - Controller
+@CrossOrigin(origins = "https://joacoapi-env.eba-pjifwcsb.eu-west-3.elasticbeanstalk.com:8080")
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("api/v1/customers")
 public class CustomerController {
 
