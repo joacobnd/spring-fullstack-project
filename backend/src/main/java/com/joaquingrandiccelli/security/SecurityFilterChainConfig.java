@@ -15,16 +15,16 @@ public class SecurityFilterChainConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .authorizeHttpRequests()
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+        http
+                .csrf().disable()
                 .cors(Customizer.withDefaults())
-                .build();
+                .authorizeRequests(authorizeRequests ->
+                        authorizeRequests
+                                .anyRequest().permitAll()
+                );
 
+        return http.build();
+        
     }
 
 
