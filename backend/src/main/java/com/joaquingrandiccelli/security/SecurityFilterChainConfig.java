@@ -15,9 +15,14 @@ public class SecurityFilterChainConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .cors(Customizer.withDefaults());
+                .cors(Customizer.withDefaults())
+                .authorizeRequests(authorizeRequests ->
+                        authorizeRequests
+                                .anyRequest().permitAll()
+                );
 
         return http.build();
+        
     }
 
 

@@ -13,9 +13,6 @@ P
 MEMO.txt,9\8\98448f4ef9037a43a80bd0901205e4eb1ff9eb24
 u
 Ebackend/src/main/java/com/joaquingrandiccelli/PingPongController.java,7\4\745e47ac21e8c911e035e5a21194f190ec1d3f51
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 I
 frontend/react/index.html,c\f\cfe789f05a71ec8e017cbb4c2e4201623ca248b9
 S
