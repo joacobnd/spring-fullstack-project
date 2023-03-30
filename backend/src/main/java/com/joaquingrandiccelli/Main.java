@@ -35,7 +35,7 @@ public class Main {
             Random random = new Random();
 
             Name name = faker.name();
-            String firstName = "NEGRO PUTO";
+            String firstName = "NEGRO"+Math.random();
             String lastName = name.lastName();
             int age = random.nextInt(16, 90);
             Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;

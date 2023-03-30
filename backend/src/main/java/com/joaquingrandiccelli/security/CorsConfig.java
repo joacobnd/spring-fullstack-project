@@ -27,19 +27,6 @@ public class CorsConfig {
     private List<String> expectedHeaders;
 
     @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(allowedOrigins);
-        configuration.setAllowedMethods(allowedMethods);
-        configuration.setAllowedHeaders(allowedHeaders);
-        configuration.setExposedHeaders(expectedHeaders);
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/**", configuration);
-        return source;
-
-    }
-
-    @Bean
     public WebMvcConfigurer configure() {
         return new WebMvcConfigurer() {
             @Override
@@ -48,4 +35,5 @@ public class CorsConfig {
             }
         };
     }
+
 }
