@@ -22,7 +22,6 @@ public class Main {
 
     }
 
-
     @Bean
     CommandLineRunner runner(CustomerRepository customerRepository) {
         return args -> {
@@ -41,10 +40,7 @@ public class Main {
                     age,
                     gender);
 
-
             customerRepository.save(customer1);
-
-
         };
     }
 
