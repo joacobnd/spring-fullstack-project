@@ -1,23 +1,0 @@
-
-w
-Gbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerDao.java,7\e\7eeec107eccffd176d0ef20d1aa2a141b9e0a04c
-ˆ
-Xbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerJPADataAccessService.java,d\1\d1d41fbb47c494ad0a4135310aa999c8fd5a84b5
-~
-Nbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerRepository.java,a\b\ab1f01a57b9b0a0b5cb151d1bce9edffd6c72bff
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-u
-Ebackend/src/main/java/com/joaquingrandiccelli/PingPongController.java,7\4\745e47ac21e8c911e035e5a21194f190ec1d3f51
-P
- .github/workflows/backend-ci.yml,4\a\4a71d8f4c9eca6b1270bc119e4822517451b02f9
-8
-MEMO.txt,9\8\98448f4ef9037a43a80bd0901205e4eb1ff9eb24
-I
-frontend/react/index.html,c\f\cfe789f05a71ec8e017cbb4c2e4201623ca248b9
-M
-frontend/react/vite.config.js,3\7\37af78d33f7a6b555b77ece7c8b3bb5a8e085d1d
-S
-#frontend/react/src/assets/react.svg,f\9\f9f17c55beb0088dbf513b8b106ceb5ed9bf4689
-N
-frontend/react/public/vite.svg,a\1\a1c47ee62fc5033de67e59469eebe654acee011c
