@@ -26,7 +26,6 @@ public class CorsConfig {
     @Value("#{'${cors.exposed-headers}'.split(',')}")
     private List<String> expectedHeaders;
 
-
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
@@ -45,8 +44,6 @@ public class CorsConfig {
                 .csrf().disable()
                 .cors().configurationSource(corsConfigurationSource())
                 .and().build();
-
-
     }
 
 }
