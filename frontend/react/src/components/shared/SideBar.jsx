@@ -115,8 +115,8 @@ const NavItem = ({ icon, children, ...rest }) => {
                 role="group"
                 cursor="pointer"
                 _hover={{
-                    bg: 'cyan.400',
-                    color: 'teal',
+                    bg: 'teal',
+                    color: 'whiteAlpha.900',
                 }}
                 {...rest}>
                 {icon && (
@@ -134,7 +134,6 @@ const NavItem = ({ icon, children, ...rest }) => {
         </Link>
     );
 };
-
 
 const MobileNav = ({ onOpen, ...rest }) => {
     return (
