@@ -10,6 +10,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -22,11 +23,15 @@ class CustomerServiceTest {
 
     @Mock
     private CustomerDao customerDao;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
     private CustomerService underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new CustomerService(customerDao);
+        underTest = new CustomerService(customerDao, passwordEncoder);
     }
 
     @Test
@@ -46,7 +51,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         Mockito.when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -77,8 +82,12 @@ class CustomerServiceTest {
         when(customerDao.existPersonWithEmail(email)).thenReturn(false);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "alex", email, 19, Gender.MALE
+                "alex", email, "password", 19, Gender.MALE
         );
+
+        String hashPassword = "&%s785456865";
+
+        when(passwordEncoder.encode(request.password())).thenReturn(hashPassword);
 
         // When
         underTest.addCustomer(request);
@@ -95,6 +104,7 @@ class CustomerServiceTest {
         assertThat(capturedCustomer.getId()).isNull();
         assertThat(capturedCustomer.getName()).isEqualTo(request.name());
         assertThat(capturedCustomer.getEmail()).isEqualTo(request.email());
+        assertThat(capturedCustomer.getPassword()).isEqualTo(hashPassword);
         assertThat(capturedCustomer.getAge()).isEqualTo(request.age());
     }
 
@@ -105,7 +115,7 @@ class CustomerServiceTest {
         when(customerDao.existPersonWithEmail(email)).thenReturn(true);
 
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                "alex", email, 19, Gender.MALE
+                "alex", email, "password", 19, Gender.MALE
         );
 
         // When
@@ -152,7 +162,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -191,7 +201,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -223,7 +233,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -257,7 +267,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -289,7 +299,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
@@ -318,7 +328,7 @@ class CustomerServiceTest {
                 id,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
         when(customerDao.selectCustomerById(id)).thenReturn(Optional.of(customer));
 
