@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 //Business Layer - Service
 @Service
@@ -15,19 +16,26 @@ public class CustomerService {
 
     private final CustomerDao customerDao;
 
+    private final CustomerDTOMapper customerDTOMapper;
+
     private final PasswordEncoder passwordEncoder;
 
-    public CustomerService(@Qualifier("jdbc") CustomerDao customerDao, PasswordEncoder passwordEncoder) {
+    public CustomerService(@Qualifier("jdbc") CustomerDao customerDao, CustomerDTOMapper customerDTOMapper, PasswordEncoder passwordEncoder) {
         this.customerDao = customerDao;
+        this.customerDTOMapper = customerDTOMapper;
         this.passwordEncoder = passwordEncoder;
     }
 
-    public List<Customer> getAllCustomers() {
-        return customerDao.selectAllCustomer();
+    public List<CustomerDTO> getAllCustomers() {
+        return customerDao.selectAllCustomer()
+                .stream()
+                .map(customerDTOMapper)
+                .collect(Collectors.toList());
     }
 
-    public Customer getCustomer(Integer id) {
+    public CustomerDTO getCustomer(Integer id) {
         return customerDao.selectCustomerById(id)
+                .map(customerDTOMapper)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Customer with id [%s] not found".formatted(id))
                 );
@@ -61,7 +69,12 @@ public class CustomerService {
     }
 
     public void updateCustomer(Integer customerId, CustomerUpdateRequest request) {
-        Customer customer = getCustomer(customerId);
+
+        Customer customer = customerDao.selectCustomerById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Customer with id [%s] not found".formatted(customerId))
+                );
+
         boolean changes = false;
         if (request.name() != null && !request.name().equals(customer.getName())) {
             customer.setName(request.name());
