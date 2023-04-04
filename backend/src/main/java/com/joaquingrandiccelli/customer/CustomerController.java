@@ -3,6 +3,9 @@ package com.joaquingrandiccelli.customer;
 import com.joaquingrandiccelli.jwt.JWTUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/customers")
 public class CustomerController {
+
 
     private final CustomerService customerService;
     private final JWTUtil jwtUtil;
@@ -53,6 +57,5 @@ public class CustomerController {
             @RequestBody CustomerUpdateRequest request) {
         customerService.updateCustomer(customerId, request);
     }
-
 
 }

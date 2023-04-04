@@ -2,11 +2,13 @@ package com.joaquingrandiccelli.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.lang.Strings;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.time.Instant;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import static java.time.temporal.ChronoUnit.*;
@@ -25,6 +27,9 @@ public class JWTUtil {
         return issueToken(subject, Map.of("scopes", scopes));
     }
 
+    public String issueToken(String subject, List<String> scopes){
+        return issueToken(subject, Map.of("scopes", scopes));
+    }
 
     public String issueToken(
             String subject,
