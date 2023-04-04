@@ -54,7 +54,7 @@ class CustomerJPADataAccessServiceTest {
                 1,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
 
         // When
@@ -108,7 +108,7 @@ class CustomerJPADataAccessServiceTest {
                 1,
                 "Joaquin",
                 "joaco@gmail.com",
-                31,
+                "password", 31,
                 Gender.MALE);
 
         // When
