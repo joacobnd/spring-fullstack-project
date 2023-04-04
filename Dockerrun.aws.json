@@ -15,7 +15,7 @@
     },
     {
       "name": "fullstack-project",
-      "image": "joacobnd/fullstack-project:04.04.2023.08.48.16",
+      "image": "joacobnd/fullstack-project:04.04.2023.09.34.17",
       "essential": true,
       "memory": 512,
       "portMappings": [
