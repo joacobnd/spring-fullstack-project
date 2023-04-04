@@ -23,8 +23,6 @@ Gbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerDao.java,7\e\7e
 \backend/src/test/java/com/joaquingrandiccelli/customer/CustomerJPADataAccessServiceTest.java,7\d\7d045511d6dd348a934578bfe45d2d464b975699
 ‰
 Ybackend/src/main/java/com/joaquingrandiccelli/customer/CustomerListDataAccessService.java,1\1\117ae9d08b9f85c7fd096241277c44a09de8e3c2
-g
-7backend/src/main/java/com/joaquingrandiccelli/Main.java,0\f\0f3f2293915959ca817be1e953c59b37eac6d842
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 v

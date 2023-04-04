@@ -23,8 +23,6 @@ Qbackend/src/test/java/com/joaquingrandiccelli/customer/CustomerRowMapperTest.ja
 Nbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerRepository.java,a\b\ab1f01a57b9b0a0b5cb151d1bce9edffd6c72bff
 w
 Gbackend/src/main/java/com/joaquingrandiccelli/customer/CustomerDao.java,7\e\7eeec107eccffd176d0ef20d1aa2a141b9e0a04c
-g
-7backend/src/main/java/com/joaquingrandiccelli/Main.java,0\f\0f3f2293915959ca817be1e953c59b37eac6d842
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 v
