@@ -2,7 +2,6 @@ package com.joaquingrandiccelli.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.lang.Strings;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Service;
 import java.security.Key;
@@ -39,7 +38,7 @@ public class JWTUtil {
                 .builder()
                 .setClaims(claims)
                 .setSubject(subject)
-                .setIssuer("https://amigoscode.com")
+                .setIssuer("Joaquin N. G.")
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(
                         Date.from(
