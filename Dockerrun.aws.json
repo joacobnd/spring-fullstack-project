@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "joaco-react",
-      "image": "joacobnd/joaco-react:latest",
+      "image": "joacobnd/joaco-react:05.04.2023.17.33.03",
       "essential": true,
       "memory": 256,
       "portMappings": [
