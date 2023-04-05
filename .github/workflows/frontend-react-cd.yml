@@ -85,8 +85,8 @@ jobs:
       - name: Send Slack Message
         run: >
             curl -X POST -H 'Content-type: application/json' 
-                --data '{"text":":githubloading: Committing to repo https://github.com/joacobnd/spring-fullstack-project"}' 
-                ${{ secrets.SLACK_WEBHOOK_URL }}
+            --data '{"text":":githubloading: Committing to repo https://github.com/joacobnd/spring-fullstack-project"}' 
+            ${{ secrets.SLACK_WEBHOOK_URL }}
 
       - name: Commit and push Dockerrun.aws.json
         run: |
