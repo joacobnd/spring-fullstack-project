@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Random;
-import java.util.UUID;
 
 
 @SpringBootApplication
@@ -36,14 +35,17 @@ public class Main {
             String lastName = name.lastName();
             int age = random.nextInt(16, 90);
             Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+            String email = firstName + "." + lastName + "@gmail.com";
             Customer customer1 = new Customer(
                     firstName + " " + lastName,
-                    firstName + "." + lastName + "@gmail.com",
-                    passwordEncoder.encode(UUID.randomUUID().toString()),
+                    email,
+                    passwordEncoder.encode("password"),
                     age,
                     gender);
 
             customerRepository.save(customer1);
+            System.out.println(email);
+
         };
     }
 
