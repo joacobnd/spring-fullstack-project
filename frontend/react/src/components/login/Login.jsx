@@ -75,7 +75,7 @@ const LoginForm = () => {
                             label={"Email"}
                             name={"username"}
                             type={"email"}
-                            placeholder={"hello@amigoscode.com"}
+                            placeholder={"example@email.com"}
                         />
                         <MyTextInput
                             label={"Password"}
@@ -132,7 +132,7 @@ const Login = () => {
                     alt={'Login Image'}
                     objectFit={'cover'}
                     src={
-                        'https://user-images.githubusercontent.com/40702606/215539167-d7006790-b880-4929-83fb-c43fa74f429e.png'
+                        'https://user-images.githubusercontent.com/77800578/230351860-11550865-357b-40bf-87a0-c3c907974786.png'
                     }
                 />
             </Flex>
