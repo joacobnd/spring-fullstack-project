@@ -20,7 +20,7 @@ import {
 import {useRef} from "react";
 import {deleteCustomer} from "../../services/client.jsx";
 import {errorNotification, successNotification} from "../../services/notifications.jsx";
-import CreateCustomerForm from "./CreateCustomerForm.jsx";
+import CreateCustomerForm from "../shared/CreateCustomerForm.jsx";
 import UpdateCustomerDrawer from "./UpdateCustomerDrawer.jsx";
 
 export default function CardWithImage({id, name, email, age, gender, imageNumber, fetchCustomers}) {

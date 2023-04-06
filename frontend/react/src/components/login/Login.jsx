@@ -37,7 +37,6 @@ const MyTextInput = ({label, ...props}) => {
     );
 };
 
-
 const LoginForm = () => {
 
     const {login} = useAuth();
@@ -90,6 +89,7 @@ const LoginForm = () => {
                             disabled={!isValid || isSubmitting}>
                             Login
                         </Button>
+                        <h1 align={"center"} >New here!? <a color={"blue"} href={"/signup"}>Create an account.</a></h1>
                     </Stack>
                 </Form>
             )}
@@ -136,6 +136,7 @@ const Login = () => {
                     }
                 />
             </Flex>
+
         </Stack>
     );
 }
