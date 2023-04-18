@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
 
 class CustomerJPADataAccessServiceTest {
@@ -117,4 +120,18 @@ class CustomerJPADataAccessServiceTest {
         // Then
         verify(customerRepository).save(customer);
     }
+
+    @Test
+    void canUpdateProfileImageId() {
+        // Given
+        String profileImageId = "2222";
+        Integer customerId = 1;
+
+        // When
+        underTest.updateCustomerProfileImageId(profileImageId, customerId);
+
+        // Then
+        verify(customerRepository).updateProfileImageId(profileImageId, customerId);
+    }
+
 }
