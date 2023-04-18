@@ -5,22 +5,12 @@ W
 '.github/workflows/frontend-react-cd.yml,4\c\4c4972ae783a590e66c27bf3256b0d015796b0f6
 ]
 -frontend/react/src/components/login/Login.jsx,c\3\c3cd293829d6e2efc975b85eb3d689770168cec8
-K
-frontend/react/src/main.jsx,9\a\9ae5a2d6f697d95abde54b90bdfae3ab0d12d325
 _
 /frontend/react/src/components/signup/Signup.jsx,0\7\0789c32da86a3d3017a5f7098f4b6c09c1a9cc81
 }
 Mbackend/src/main/java/com/joaquingrandiccelli/auth/AuthenticationRequest.java,5\2\52f49ef6e1460561c87c9c002b89281320af7aa1
 o
 ?frontend/react/src/components/customer/UpdateCustomerDrawer.jsx,e\5\e5eb1536cc12e15bad953da6825219d21a51b946
-K
-frontend/react/src/Home.jsx,9\b\9b6170a775df13f7853dad0d2237140282a2db53
-O
-frontend/react/src/Customer.jsx,c\d\cd361dc3afeb47ecdec70c6be2d292908ac5e092
-`
-0frontend/react/src/components/shared/SideBar.jsx,4\1\41e80c91099fb0f7d47f82df6e5ce2e53132b3b0
-_
-/frontend/react/src/components/customer/Card.jsx,f\5\f54a6a4e612dcc188bc65b4441e0926acf1af2c1
 „
 Tbackend/src/main/java/com/joaquingrandiccelli/exception/DefaultExceptionHandler.java,7\5\750103202a204050fb270bdbe66832fd60f8e014
 t

@@ -37,7 +37,7 @@ const LinkItems = [
     { name: 'Settings', route: '/dashboard/settings', icon: FiSettings },
 ];
 
-export default function SidebarWithHeader({children,}) {
+export default function SidebarWithHeader({ children }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -58,7 +58,7 @@ export default function SidebarWithHeader({children,}) {
                 </DrawerContent>
             </Drawer>
             {/* mobilenav */}
-            <MobileNav onOpen={onOpen} />
+            <MobileNav onOpen={onOpen}/>
             <Box ml={{ base: 0, md: 60 }} p="4">
                 {children}
             </Box>
@@ -131,7 +131,7 @@ const NavItem = ({ icon, route, children, ...rest }) => {
     );
 };
 
-const MobileNav = ({onOpen, ...rest }) => {
+const MobileNav = ({ onOpen, ...rest }) => {
     const {logOut, customer} = useAuth();
     return (
         <Flex
@@ -176,9 +176,7 @@ const MobileNav = ({onOpen, ...rest }) => {
                             <HStack>
                                 <Avatar
                                     size={'sm'}
-                                    src={
-                                        ''
-                                    }
+                                    src={''}
                                 />
                                 <VStack
                                     display={{base: 'none', md: 'flex'}}
